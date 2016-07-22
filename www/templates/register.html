@@ -1,0 +1,33 @@
+<ion-view view-title="Register">
+    <ion-content class="padding-horizontal">
+        <button class="button button-block button-clear button-positive" a ui-sref="login">
+  Click here to login if you've registered.
+</button>
+        <form name="registerForm" ng-submit="signupForm(registerForm)" novalidate>
+            <label class="item item-input" ng-class="{ 'has-errors' : registerForm.firstname.$invalid && registerForm.$submitted}">
+                    <input name="firstname" type="text" placeholder="First name" ng-model="user.firstName" required>
+                </label>
+            <label class="item item-input" ng-class="{ 'has-errors' : registerForm.lastname.$invalid && registerForm.$submitted}">
+                    <input name="lastname"  type="text" placeholder="Last name" ng-model="user.lastName" required>
+                </label>
+            <label class="item item-input">
+                    <input name="organization" type="text" placeholder="Organization (optional)" ng-model="user.organization">
+                </label>
+            <label class="item item-input" ng-class="{ 'has-errors' : registerForm.email.$invalid && registerForm.$submitted}">
+                    <input name="email" type="email" placeholder="Email" ng-model="user.email" required>
+                </label>
+            <label class="item item-input" ng-class="{ 'has-errors' : registerForm.username.$invalid && registerForm.$submitted}">
+                    <input name="username" type="text" placeholder="Username" ng-model="user.username" required>
+                </label>           
+            <label class="item item-input" ng-class="{ 'has-errors' : registerForm.password.$invalid && registerForm.$submitted}">
+                    <input name="password" type="password" placeholder="Password" ng-model="user.password" required>
+                </label><br>
+                    <!--Line to potentially add a profile picture-->
+                You can choose a profile picture, if you'd like.<input type="file" name="pic" accept="image/*" multiple></input>
+                <br>
+            <button class="button button-block button-outline button-positive custom-button" ng-disabled="registerForm.$invalid" type="submit">
+        Register
+      </button>
+        </form>
+    </ion-content>
+</ion-view>

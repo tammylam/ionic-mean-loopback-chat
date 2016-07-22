@@ -1,0 +1,24 @@
+<ion-view view-title="Login">
+    <ion-content class="padding-horizontal">
+        <button class="button button-block button-clear button-positive" a ui-sref="register">
+  Click here to register if you haven't yet.
+</button>
+        <form name="loginForm" ng-submit="accessForm(loginForm)" novalidate>
+            <label class="item item-input" ng-class="{ 'has-errors' : loginForm.email.$invalid && loginForm.$submitted}">
+                    <input name="email" type="email" placeholder="Email" ng-model="user.email" required>
+                </label>
+            <label class="item item-input" ng-class="{ 'has-errors' : loginForm.password.$invalid && loginForm.$submitted}">
+                    <input name="password" type="password" placeholder="Password" ng-model="user.password" required>
+                </label>
+            <button class="button button-block button-outline button-positive custom-button" ng-disabled="loginForm.$invalid" type="submit">
+        Login
+      </button>
+        </form>
+    
+    <!--<div class="hero-frame">-->
+    <!--  <span class="helper"></span>-->
+    <!--</div>-->
+    <!--<button ng-click="login()" class="button button-block icon-left ion-social-facebook button-positive" type="submit" value="Submit">Login with Facebook</button>-->
+  
+  </ion-content>
+</ion-view>
